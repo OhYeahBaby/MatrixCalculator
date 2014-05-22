@@ -54,7 +54,7 @@ public class RVector {
 		}
 	}
 	//other useful functions
-	private boolean sameDimension(RVector[] vList){
+	public boolean sameDimension(RVector[] vList){
 		for (int i = 0; i<vList.length; i++){
 			if(vList[i].dimensions != dimensions){
 				return false;
