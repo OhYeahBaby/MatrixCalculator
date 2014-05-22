@@ -1,7 +1,7 @@
 package linearAlgebra;
 public class RVector {
 	public int dimensions = 1;
-	public float[] values = {0, 0};
+	public float[] values = {0};
 	//constructor
 	public RVector(int dim, float[] vals){
 		dimensions = dim;
