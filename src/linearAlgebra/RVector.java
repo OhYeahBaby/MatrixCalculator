@@ -1,10 +1,15 @@
 package linearAlgebra;
 public class RVector {
-	public int dimensions = 1;
-	public float[] values = {0};
+	public int dimensions;
+	public float[] values;
 	//constructor
 	public RVector(int dim, float[] vals){
 		dimensions = dim;
+		values = vals;
+	}
+	public RVector(){
+		dimensions = 2;
+		float[] vals = {0, 0};
 		values = vals;
 	}
 	//mutator methods

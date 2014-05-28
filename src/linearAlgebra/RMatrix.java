@@ -1,14 +1,20 @@
 package linearAlgebra;
-
 public class RMatrix {
-public int rowNum = 1;
-public int colNum = 1;
+public int rowNum;
+public int colNum;
 public RVector[] rowVectors;
 //constructor
 public RMatrix(int rows, int cols, RVector[] row_vectors){
 	rowNum = rows;
 	colNum = cols;
 	rowVectors = row_vectors;
+}
+public RMatrix(){
+	rowNum = 2;
+	colNum = 2;
+	RVector zero_vector = new RVector();
+	RVector[] rowVs = {zero_vector, zero_vector};
+	rowVectors = rowVs;
 }
 //mutator methods
 public void matrix_add(RMatrix a){
@@ -33,12 +39,14 @@ public float get_entry(int col, int row){
 }
 public RVector get_column_vector(int col){
 	int dims = rowNum;
-	float[] colEntries = new float[dims];
+	float[] colEntries;
+	colEntries = new float[dims];
 	if(colNum > col){
 		for (int row = 0; row < dims; row ++)
 			colEntries[row] = this.get_entry(col, row);
 	}
-	return RVector(dims, colEntries);
+
+	return new RVector(dims, colEntries);
 }
 //other useful methods
 public boolean same_size(RMatrix a){
